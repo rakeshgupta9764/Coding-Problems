@@ -1,0 +1,25 @@
+Problem Statement:
+
+A string with parentheses is well bracketed if all parentheses are matched: every opening bracket has a matching closing bracket and vice versa.
+
+Write a Python function wellbracketed(s) that takes a string s containing parentheses and returns True if s is well bracketed and False otherwise.
+
+Hint: Keep track of the nesting depth of brackets. Initially the depth is 0. The depth increases with each opening bracket and decreases with each closing bracket. What are the constraints on the value of the nesting depth for the string to be wellbracketed?
+
+
+Solution:
+
+def wellbracketed(s):
+    nesting = 0				# initialize balance as zero
+
+    for c in s:				# for each character in the string
+        if c == '(':			
+            nesting += 1		# increment the balance on one side, say the positive side
+
+        elif c == ')':
+            nesting -= 1		# decrement the balance on the opposite side, say the negative side
+        if nesting < 0:			
+            return(False)		# if in the middle of the string, we get ')', the closing bracket, it means the expression becomes false and we cannot balance it however far we iterate over the string 
+    return(nesting == 0)		# if we iterate over the entire string successfully, it means the balance is either zero or positive, since in the only other case (negative) the control gets exit from the loop using the previous statement
+					# a zero value of balance shows that the expression is well-bracketed
+					# if balanace is positive, it shows that '(', the starting bracket, is more in number than the number of closing brackets
