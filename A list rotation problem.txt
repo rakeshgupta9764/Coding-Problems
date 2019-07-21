@@ -1,0 +1,18 @@
+Problem Statment:
+
+A list rotation consists of taking the last element and moving it to the front. For instance, if we rotate the list [1,2,3,4,5], we get [5,1,2,3,4]. If we rotate it again, we get [4,5,1,2,3].
+
+Write a Python function rotatelist(l,k) that takes a list l and a positive integer k and returns the list l after k rotations. If k is not positive, your function should return l unchanged. Note that your function should not change l itself, and should return the rotated list.
+
+
+Solution:
+
+def rotatelist(l,k):
+    retlist = l[:]					# create a new list and copy contents of list l because the original list does not have to be modified, as per the problem
+
+    if k <= 0:
+        return(retlist)					# as per the problem, negative k should just leave the list as it is
+
+    for i in range(1,k+1):
+        retlist = [retlist[-1]] + retlist[:-1]		# use slicing to obtain the new string as per the rotation given in the problem
+    return(retlist)
