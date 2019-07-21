@@ -1,0 +1,28 @@
+Problem Statement:
+
+A positive integer m is a sum of squares if it can be written as k + l where k > 0, l > 0 and both k and l are perfect squares.
+
+Write a Python function sumofsquares(m) that takes an integer m returns True if m is a sum of squares and False otherwise. (If m is not positive, your function should return False.)
+
+
+Solution:
+
+from math import *
+						
+def issquare(n):				# define a function to check if  number is a perfect square as follows. First, find its root, which is float type
+						# if m is perfect square the square of the root should be equal to m
+						# For non-perfect squares, we get a floating point square root, which on squaring, does equal m in the first place
+    k = int(sqrt(n))
+    return(k*k == n)
+    
+def sumofsquares(m):
+    if m <= 0:
+        return(False)				# as per the problem
+
+    for i in range(1,m//2+1):			# we are checking the two parts of the sum, so it can be generalized that we need to check until the middle point
+        if (issquare(i) and issquare(m-i)):	# check whether first part of the sum is a perfect square, if yes, check the second part of the sum
+            return(True)
+    return(False)
+
+
+	
