@@ -1,0 +1,16 @@
+# Recursive implementation of Insertion Sort
+
+def InsertionSortRec(l):
+	isort(l, len(l))
+
+def isort(l, k):			#sort the slice l[0:k] (exclude the kth element)
+	if k>1 :
+		isort(l, k-1)
+		insert(l, k-1)		#insert the k-1 th element into l
+
+def insert(l, k):
+	pos = k
+	while pos > 0 and l[pos] < l[pos - 1]:
+		l[pos], l[pos - 1] = l[pos - 1], l[pos]
+		pos = pos - 1
+	

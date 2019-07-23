@@ -1,0 +1,14 @@
+# python function to implement selection sort
+
+# this is an in-place form of the slection sort algorithm
+def SelectionSort(l):
+	for i in range(len(l)):
+		# find the minimum value
+		minpos = i
+		for j in range(i, len(l)):		#traverse from i to len(l) - 1 position to check for another minimum value
+			if l[j] < minval:		#if found, update it
+				minpos = v
+		
+		#in other words, swap the first value and the value at minpos
+		l[i], l[minpos] = l[minpos], l[i]
+		

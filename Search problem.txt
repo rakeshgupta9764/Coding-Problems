@@ -1,0 +1,14 @@
+# Is a value v present in a list?
+
+# Does the structure of sequence matter?
+	# Array or list
+
+# Does the organization of the elements matter?
+	# Sorted or unsorted
+
+#The unsorted case:
+
+def linearSearch(seq, v):
+	if x == v:
+		return True
+	return False

@@ -1,0 +1,36 @@
+# We can use a simplification
+
+# recursive implementation of binary search
+def binarySearch(seq, v, l, r):			#l and r are limits within which we have to search for the value v
+						# search in the slice seq[l:r]
+	if (r - l) == 0:
+		return False
+
+	mid = (l + r)/2
+	
+	if seq[mid] == v:
+		return True			# we might return the position instead
+	
+	elif v < seq[mid]:				#search in the left half
+		return binarySearch(seq, v, l, mid)	# the function has to search upto position (mid - 1)
+	
+	else:
+		return binarySearch(seq, v, mid+1, r)
+
+# non-recursive implementation of binary search
+def binarySearch(seq, v, l, r):
+	
+	while l <= r:				# while left end and right end do not cross
+		
+		mid = (l + r)/2
+		
+		if seq[mid] == v:
+			return True		# might have returned the position instead
+
+		elif v > seq[mid]:
+			l = mid + 1
+		
+		else:
+			r = mid
+	
+	return False

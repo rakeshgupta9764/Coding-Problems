@@ -1,0 +1,10 @@
+# Start building a sorted sequence with one element
+
+# Pick up one new element from the unsorted segement and place it at its correct place in the already sorted sequence
+
+def InsertionSort(l):
+	for limit in range(0, len(l)):
+		pos = limit
+		while pos > 0 and l[pos] < l[pos - 1]:
+			l[pos], l[pos - 1] = l[pos - 1], l[pos]
+			pos = pos - 1

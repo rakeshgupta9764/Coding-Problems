@@ -1,0 +1,13 @@
+# find the position (a non-negative index) of a value in a list
+
+# we use the concept of "break" keyword here
+
+def findpos(seq, v):
+	
+	# note that pos is not initialized here for the case if the value is not found, we will define the value in that case explicitly
+	for i in range (len(seq)):
+		if seq[i] == v:
+			pos = i
+			break			# or simply return i
+	pos = -1
+	return pos		

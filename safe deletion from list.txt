@@ -1,0 +1,9 @@
+listname.remove(value) removes first occurrence of the value from the list. But if the list does not have any such value then it producde an error.
+
+How to avoid that error?
+
+We note that the expression "value in listname" returns true if the value exists in the list.
+
+#safely remove value from list
+if value in listname:
+	listname.remove(value)

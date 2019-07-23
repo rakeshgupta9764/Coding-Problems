@@ -1,0 +1,13 @@
+# length of a list
+
+def length(l):
+	if l == []:
+		return 0
+	return (1 + length(l[1:])
+
+#sum of elements
+
+def sumElements(l):
+	if l == []:
+		return 0
+	return (l[0] + sumElements(l[1:]))
