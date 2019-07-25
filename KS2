@@ -1,0 +1,38 @@
+An integer is round if it is greater than 0 and the sum of its digits in decimal representation is a multiple of 10.
+Find the N-th smallest round integer.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first and only line of each test case contains a single integer N.
+Output
+For each test case, print a single line containing the N-th round integer. It is guaranteed that this number is smaller than 2^64.
+
+Constraints
+1≤T≤10^5
+1≤N≤10^18
+
+Example Input
+1
+2
+Example Output
+28
+Explanation
+Example case 1: The smallest round integer is 19 and the second smallest is 28.
+
+Program:
+
+#start fro the next method
+def sumdigits(n):
+    sum = 0
+    while n != 0:
+        sum += n%10
+        n /= 10
+    return sum
+def smallestround(n):
+    for i in range(10*n, 10*n + 9):     #first round number is 19, leave the last digit, remaining number denotes the rank 'n'. Only one round number can be found within a range of 9 numbers. Example, after 19, we have 28. After 91, we have 108. So a difference of 10 is a must, from first example we get that actual difference is 9. For formal proof, refer codechef problem solution for KS2.
+        if sumdigits(i)%10 == 0:        # we require sum of digits
+            return i
+t = int(input())
+while t != 0:
+    n = int(input)
+    print(smallestround(n))
