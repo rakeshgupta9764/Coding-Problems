@@ -1,0 +1,34 @@
+# ascending sequence
+
+def ascending(seq):
+    if len(seq) < 2:
+        return True
+    return (seq[0] <= seq[1] and ascending(seq[1:])
+
+
+# alternating sequence
+
+def uptodown(seq):
+    if len(seq) < 2:
+        return True
+    return (seq[0] > seq[1] and downtoup(seq[1:])
+
+def downtoup(seq):
+     if len(seq) < 2:
+        return True
+     retunr (seq[0] < seq[1] and uptodown(seq[1:])
+ 
+def alternating (seq):
+    return (uptodown(seq) or downtoup(seq))
+
+
+# matrix multiplicatication assuming suitable dimensions
+
+def muatmult(l, r):
+    res = (len(r[0])*[0] for i in range(len(l))
+    for i in range (len(l)):
+        for j in range (len(r[0]):
+            res[i][j] = 0
+            for k in range (len(l[0]):
+                res[i][j] = res[i][j] + l[i][k]*r[k][j]
+ 
