@@ -23,7 +23,8 @@ public class Main {
 
         int numberOfVariables = Integer.parseInt(scanner.nextLine());
 
-        String regex = "(_[a-zA-Z0-9]+\\w*)|([a-zA-Z]\\w*)";
+        String regex = "(_[a-zA-Z0-9]+\\w*)|([a-zA-Z]\\w*)";    // // we always use \\w* at the end; the regex can be simplified.
+                                                                // (but not necessary).
 
         for (int i = 0; i < numberOfVariables; i++) {
             String identifier = scanner.nextLine();
